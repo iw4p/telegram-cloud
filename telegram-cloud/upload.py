@@ -1,6 +1,6 @@
 from telethon import TelegramClient
 
-client = TelegramClient(name, api_id, api_hash)
+client = TelegramClient('name', api_id, api_hash)
 
 async def main():
     # Now you can use all client methods listed below, like for example...

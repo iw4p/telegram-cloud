@@ -8,29 +8,27 @@ def get_app_data():
     print("First of all you need an Telegram account and then you have to generate api_id and api_hash, to get it visit my.telegram.org") 
     api_id = input ("Enter api_id:") 
     api_hash = input("Enter api_hash:") 
+    name = input("And give me a name:") 
 
     config['APP'] = {}
 
-    data = config['APP']
     config['APP']['api_id'] = api_id
-    config['APP']['api_hash'] = api_id
-    # data['api_id'] = api_id
-    # data['api_hash'] = api_hash
+    config['APP']['api_hash'] = api_hash
+    config['APP']['name'] = name
 
     with open(path, 'w') as configfile:
         config.write(configfile)
 
 
-def fetch_app_data() -> tuple:
+def fetch_app_data():
 
-    config.read(path)
+    if (os.path.isfile(path) == False):
+        get_app_data()
+    else:
+        config.read(path)
 
-    api_id = config['APP']['api_id']
-    api_hash = config['APP']['api_hash']
+        api_id = config['APP']['api_id']
+        api_hash = config['APP']['api_hash']
+        name = config['APP']['name']
 
-    return (api_id, api_hash)
-
-# get_app_data()
-
-# x = fetch_app_data()
-# print(x)
+        return (api_id, api_hash, name)

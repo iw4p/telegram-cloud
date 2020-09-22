@@ -3,7 +3,7 @@
 from telethon import TelegramClient, events, utils
 
 import argparse
-from telegram_config import fetch_app_data
+from .telegram_config import fetch_app_data
 
 parser = argparse.ArgumentParser()
 
@@ -15,6 +15,8 @@ parser.add_argument("--mode", "-m", help="Change mode to upload or download", re
 parser.add_argument("--caption", "-c", help = "for upload mode: write caption/text under file, for download mode: download file by its caption or name", default = '', required = False)
 
 args = parser.parse_args()
+
+
 
 # Get session name from CLI
 unique_name = args.name

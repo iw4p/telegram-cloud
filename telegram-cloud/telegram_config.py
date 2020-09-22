@@ -33,7 +33,6 @@ def fetch_app_data(unique_name):
         get_app_data()
     else:
         config.read(path)
-        print(config.read(path))
         if config.has_section(unique_name):
             api_id = config[unique_name]['api_id']
             api_hash = config[unique_name]['api_hash']

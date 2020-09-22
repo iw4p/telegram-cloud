@@ -4,19 +4,27 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="example-pkg-YOUR-USERNAME-HERE", # Replace with your own username
-    version="0.0.1",
-    author="Example Author",
-    author_email="author@example.com",
-    description="A small example package",
-    long_description=long_description,
+    name="telegram-cloud-IW4P", # Replace with your own username
+    version="1.0.0",
+    author="Nima Akbarzade",
+    author_email="Nimakbarzade@yahoo.com",
+    description="Download and upload files via telegram CLI, Maximum 1.5GB",
+    long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/iw4p/telegram-cloud",
     packages=setuptools.find_packages(),
+      entrypoints={
+    'console_scripts': [
+      'telegram-cloud = main:main',
+    ]},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    license='README.md',
+    install_requires=[
+       "telethon",
+   ],
     python_requires='>=3.6',
 )

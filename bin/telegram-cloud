@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+import os 
+os.system('python3 /Users/nima/Desktop/telegram-cloud/telegram-cloud/main.py')

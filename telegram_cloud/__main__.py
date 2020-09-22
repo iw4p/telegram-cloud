@@ -3,7 +3,10 @@
 from telethon import TelegramClient, events, utils
 
 import argparse
-from .telegram_config import fetch_app_data
+from telegram_config import fetch_app_data
+# import warnings
+# warnings.filterwarnings("ignore", category=RuntimeWarning) 
+import asyncio
 
 parser = argparse.ArgumentParser()
 
@@ -49,4 +52,6 @@ async def main():
             print("File id: " + message.file.id)
 
 with client:
-    client.loop.run_until_complete(main())
+    # client.loop.run_until_complete(main())
+    asyncio.run(main())
+

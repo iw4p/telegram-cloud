@@ -6,9 +6,9 @@ config = configparser.ConfigParser()
 def get_app_data():
 
     print("First of all you need an Telegram account and then you have to generate api_id and api_hash, to get it visit my.telegram.org") 
-    api_id = input ("Enter api_id:") 
-    api_hash = input("Enter api_hash:") 
-    unique_name = input("And give me a unique name:") 
+    api_id = input ("Enter api_id: ") 
+    api_hash = input("Enter api_hash: ") 
+    unique_name = input("And give me a unique name: ") 
 
     config[unique_name] = {}
 
@@ -29,14 +29,16 @@ def get_app_data():
 
 
 def fetch_app_data(unique_name):
-
     if (os.path.isfile(path) == False):
         get_app_data()
     else:
         config.read(path)
+        print(config.read(path))
+        if config.has_section(unique_name):
+            api_id = config[unique_name]['api_id']
+            api_hash = config[unique_name]['api_hash']
+            name = config[unique_name]['unique_name']
+            return (api_id, api_hash, name)
+        else:
+            get_app_data()
 
-        api_id = config[unique_name]['api_id']
-        api_hash = config[unique_name]['api_hash']
-        name = config[unique_name]['unique_name']
-
-        return (api_id, api_hash, name)

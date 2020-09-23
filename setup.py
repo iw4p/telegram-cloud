@@ -1,34 +1,3 @@
-# import setuptools
-
-# with open("README.md", "r") as fh:
-#     long_description = fh.read()
-
-# setuptools.setup(
-#     name="telegram-cloud-IW4P",
-#     version="1.0.0",
-#     author="Nima Akbarzade",
-#     author_email="Nimakbarzade@yahoo.com",
-#     description="Download and upload files via telegram CLI, Maximum 1.5GB",
-#     long_description_content_type="text/markdown",
-#     url="https://github.com/iw4p/telegram-cloud",
-#     packages=setuptools.find_packages(),
-#     scripts=[bin],
-#     entrypoints={
-#     'console_scripts': [
-#       'telegram-cloud = main:main',
-#     ]},
-#     classifiers=[
-#         "Programming Language :: Python :: 3",
-#         "License :: OSI Approved :: MIT License",
-#         "Operating System :: OS Independent",
-#     ],
-#     license='LICENSE',
-#     install_requires=[
-#        "telethon",
-#    ],
-#     python_requires='>=3.6',
-# )
-
 import pathlib
 from setuptools import setup
 
@@ -59,7 +28,8 @@ setup(
     packages=["telegram_cloud",],
     entry_points={
         "console_scripts": [
-            "tgcloud = telegram_cloud.__main__:main",
+            "tgcloud = telegram_cloud.__main__:send",
+            "tglogin = telegram_cloud.add_session",
         ]
     },
 )

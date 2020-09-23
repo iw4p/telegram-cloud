@@ -3,10 +3,9 @@
 from telethon import TelegramClient, events, utils
 
 import argparse
-from telegram_config import fetch_app_data
+from .telegram_config import fetch_app_data
 # import warnings
 # warnings.filterwarnings("ignore", category=RuntimeWarning) 
-import asyncio
 
 parser = argparse.ArgumentParser()
 
@@ -19,8 +18,6 @@ parser.add_argument("--caption", "-c", help = "for upload mode: write caption/te
 
 args = parser.parse_args()
 
-
-
 # Get session name from CLI
 unique_name = args.name
 
@@ -28,16 +25,30 @@ unique_name = args.name
 api_id, api_hash, name = fetch_app_data(unique_name)
 client = TelegramClient(name, api_id, api_hash)
 
-async def main():
+# Get username target 
+username = args.username
 
-    # Get username target 
-    username = args.username
-
+async def target_chat_handler(username):
     # Convert and handle all types of username and chat id to target chat 
     if ('-' in username or '+' in username) and (username[1].isdigit() == True):
         target_chat = await client.get_entity(int(username))
+        return target_chat
     else:
         target_chat = await client.get_entity(username)
+        return target_chat
+
+
+async def send():
+    print('yea?')
+    # target_chat = target_chat_handler(username)
+    # if args.mode == 'upload':
+    #     if args.path and username:
+    #         message = await client.send_file(entity=target_chat, file=args.path, caption=args.caption)
+    #         print("File id: " + message.file.id)
+
+async def main():
+
+    target_chat = target_chat_handler(username)
 
     # Retrieve and download a file from its name or caption, from specific target_chat
     if args.mode == 'download':
@@ -52,6 +63,7 @@ async def main():
             print("File id: " + message.file.id)
 
 with client:
-    # client.loop.run_until_complete(main())
-    asyncio.run(main())
+    task = client.loop.create_task(main())
+    client.loop.run_until_complete(task)
+
 

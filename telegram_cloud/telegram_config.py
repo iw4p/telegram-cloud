@@ -27,9 +27,11 @@ def get_app_data():
     Path(directory).mkdir(parents=True, exist_ok=True) 
     
     if not os.path.isfile(path):
+        print('inja?1')
         with open(path, 'a') as configfile:
             config.write(configfile)
     else:
+        print('inja?2')
         with open(path, 'w') as configfile:
             config.write(configfile)
 
@@ -39,7 +41,8 @@ def get_app_data():
 
 def fetch_app_data(unique_name):
     if (os.path.isfile(path) == False):
-        get_app_data()
+        print('Please first type tglogin command to log in your Telegram account')
+        return
     else:
         config.read(path)
         if config.has_section(unique_name):
@@ -48,5 +51,6 @@ def fetch_app_data(unique_name):
             name = config[unique_name]['unique_name']
             return (api_id, api_hash, name)
         else:
-            get_app_data()
+            print('Please first type tglogin command to log in your Telegram account')
+            return
 

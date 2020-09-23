@@ -1,5 +1,10 @@
 # Telegram-cloud (A.K.A tgcloud)
 
+
+[![Telegram-cloud](https://github.com/iw4p/telegram-cloud/blob/master/images/Group.png
+)](https://pypi.org/project/telegram-cloud/)
+
+
 telegram-cloud - Download and upload files via telegram, Use your telegram account as a free cloud storage.
 
 Uploader, Downloader, Crawler, Bot 50MB limitation bypasser.
@@ -22,12 +27,10 @@ It's a python library for [Telegram messenger](https://telegram.org/), which can
 
 telegram-cloud requires [Python3](https://www.python.org/psf-landing/) and [Telethon](https://github.com/LonamiWebs/Telethon) as requirment.
 
-Install the dependencies.
-
 ```sh
-$ pip3 install -r requirements.txt
+$ pip3 install telegram-cloud
 ```
-
+Also can be found on [pypi](https://pypi.org/project/telegram-cloud/)
 ### How can I use it?
   - install the package by pip package manager.
   - after installing, type 'tglogin' on your terminal

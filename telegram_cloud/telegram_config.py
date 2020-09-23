@@ -1,10 +1,18 @@
 import configparser, os
+from pathlib import Path
 
-path = os.path.expanduser('~/.local/share/telegram-cloud-Config.ini')
+# path = os.path.expanduser('~/.local/share/telegram-cloud-Config.ini')
+# path = os.path.expanduser('~/.telegram-cloud/telegram-cloud-config.ini')
+
+home = str(Path.home())
+directory = (home + "/.telegram-cloud/")
+file_name = "telegram-cloud-config.ini"
+path = os.path.expanduser(directory + file_name)
+
 config = configparser.ConfigParser()
 
 def get_app_data():
-
+    print(home)
     print("First of all you need an Telegram account and then you have to generate api_id and api_hash, to get it visit my.telegram.org") 
     api_id = input ("Enter api_id: ") 
     api_hash = input("Enter api_hash: ") 
@@ -15,10 +23,10 @@ def get_app_data():
     config[unique_name]['api_id'] = api_id
     config[unique_name]['api_hash'] = api_hash
     config[unique_name]['unique_name'] = unique_name
-
-    file_exists = os.path.isfile(path) 
-
-    if file_exists:
+        
+    Path(directory).mkdir(parents=True, exist_ok=True) 
+    
+    if not os.path.isfile(path):
         with open(path, 'a') as configfile:
             config.write(configfile)
     else:

@@ -7,5 +7,6 @@ client = TelegramClient(unique_name, api_id, api_hash)
 async def main():
     await client.send_message('me', 'Hello from ' + unique_name)
 
-with client:
-    client.loop.run_until_complete(main())
+def cli():
+    with client:
+        client.loop.run_until_complete(main())

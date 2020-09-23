@@ -2,12 +2,12 @@
 
 from telethon import TelegramClient, events, utils
 
-import argparse
+import argparse, os, asyncio
 from .telegram_config import fetch_app_data
-# import warnings
-# warnings.filterwarnings("ignore", category=RuntimeWarning) 
 
+loop = asyncio.get_event_loop()
 parser = argparse.ArgumentParser()
+
 
 # Read arguments from the command line
 parser.add_argument("--name", "-n", help = "That unique name you've set at the first", required = True)
@@ -21,34 +21,25 @@ args = parser.parse_args()
 # Get session name from CLI
 unique_name = args.name
 
+
 # Get the session data to use TelegramClient
 api_id, api_hash, name = fetch_app_data(unique_name)
-client = TelegramClient(name, api_id, api_hash)
 
-# Get username target 
-username = args.username
+path = os.path.expanduser('~/.local/share/' + name)
 
-async def target_chat_handler(username):
+client = TelegramClient(path, api_id, api_hash)
+
+async def main():
+    
+
+    # Get username target 
+    username = args.username
+
     # Convert and handle all types of username and chat id to target chat 
     if ('-' in username or '+' in username) and (username[1].isdigit() == True):
         target_chat = await client.get_entity(int(username))
-        return target_chat
     else:
         target_chat = await client.get_entity(username)
-        return target_chat
-
-
-async def send():
-    print('yea?')
-    # target_chat = target_chat_handler(username)
-    # if args.mode == 'upload':
-    #     if args.path and username:
-    #         message = await client.send_file(entity=target_chat, file=args.path, caption=args.caption)
-    #         print("File id: " + message.file.id)
-
-async def main():
-
-    target_chat = target_chat_handler(username)
 
     # Retrieve and download a file from its name or caption, from specific target_chat
     if args.mode == 'download':
@@ -62,8 +53,8 @@ async def main():
             message = await client.send_file(entity=target_chat, file=args.path, caption=args.caption)
             print("File id: " + message.file.id)
 
-with client:
-    task = client.loop.create_task(main())
-    client.loop.run_until_complete(task)
+def cli():
+    with client:
+        client.loop.run_until_complete(main())
 
 

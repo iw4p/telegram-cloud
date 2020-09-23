@@ -28,8 +28,8 @@ setup(
     packages=["telegram_cloud",],
     entry_points={
         "console_scripts": [
-            "tgcloud = telegram_cloud.__main__:send",
-            "tglogin = telegram_cloud.add_session",
+            "tgcloud = telegram_cloud.__main__:cli",
+            "tglogin = telegram_cloud.add_session:cli",
         ]
     },
 )

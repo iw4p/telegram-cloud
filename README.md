@@ -16,7 +16,7 @@ This text you see here is *actually* written in Markdown! To get a feel for Mark
 
 ### Hmm what is this?
 
-It's a library for Telegram messenger, which can give you an ability to download, upload, and more options to do with your Telegram account on CLI.
+It's a python library for [Telegram messenger](https://telegram.org/), which can give you an ability to download, upload, and more options to do with your Telegram account on CLI.
 
 ### Installation
 
@@ -28,6 +28,18 @@ Install the dependencies.
 $ pip3 install -r requirements.txt
 ```
 
+### How can I use it?
+  - install the package by pip package manager.
+  - after installing, type 'tglogin' on your terminal
+  - Now you need to get api_id and api_hash from here [Telegram](https://my.telegram.org/)
+  from [Telethon document](https://docs.telethon.dev/en/latest/basic/signing-in.html):
+    >Before working with Telegram’s API, you need to get your own API ID and hash:
+    [Login to your Telegram](https://docs.telethon.dev/en/latest/basic/signing-in.html) account with the phone number of the developer account to use.
+    Click under API Development tools.
+    A Create new application window will appear. Fill in your application details. There is no need to enter any URL, and only the first two fields (App title and Short name) can currently be changed later.
+    Click on Create application at the end. Remember that your API hash is secret and Telegram won’t let you revoke it. Don’t post it anywhere!
+  - After that you able to call 'tgcloud' on your terminal.
+  
 ### Commands
 
 telegram-cloud is currently working with the following commands. 
@@ -44,56 +56,34 @@ telegram-cloud is currently working with the following commands.
 
 
 ### Need more examples?
-
 Download a music from my saved messages and save it on /Users/nima/Desktop/:
 ```sh
 $ tgcloud -m download -n nima -u me -p "/Users/nima/Desktop/" -c "sad but true"
 ```
+```sh
+$ tgcloud --mode download --name nima --username me --path "/Users/nima/Desktop/" --caption "sad but true"
+```
 
 Upload a banner with caption to my saved messages :
 ```sh
-$ tgcloud -m upload -n nima -u me -p "/Users/nima/Desktop/banner.png" -c "This is a caption under banner"
+$ tgcloud --mode upload --name nima --username me --path "/Users/nima/Desktop/banner.png" --caption "Help me"
 ```
 
-(optional) Third:
+Upload a pdf to an telegram ID :
 ```sh
-$ karma test
+$ tgcloud -m upload -n nima -u @autisticbruh -p "/Users/nima/Desktop/file.pdf" -c "Help me"
 ```
-#### Building for source
-For production release:
+Search and download a zip from telegram chat_id group :
 ```sh
-$ gulp build --prod
+$ tgcloud -m download -n nima -u -1001240213443 -p "/Users/nima/Desktop/" -c "best memes"
 ```
-Generating pre-built zip archives for distribution:
-```sh
-$ gulp build dist --prod
-```
-### Docker
-Dillinger is very easy to install and deploy in a Docker container.
+### What is file_id?
+from [Telegram Doc](https://core.telegram.org/api/files):
+>When working with the API, it is sometimes necessary to send a relatively large file to the server. For example, when sending a message with a photo/video attachment or when setting the current user’s profile picture.
 
-By default, the Docker will expose port 8080, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.
-
-```sh
-cd dillinger
-docker build -t joemccann/dillinger:${package.json.version} .
-```
-This will create the dillinger image and pull in the necessary dependencies. Be sure to swap out `${package.json.version}` with the actual version of Dillinger.
-
-Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 8000 of the host to port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
-
-```sh
-docker run -d -p 8000:8080 --restart="always" <youruser>/dillinger:${package.json.version}
-```
-
-Verify the deployment by navigating to your server address in your preferred browser.
-
-```sh
-127.0.0.1:8000
-```
-
-#### Telethon + Python
-[![Python](https://www.python.org/static/community_logos/python-powered-w-200x80.png)](https://www.python.org/psf-landing/)
-See [Telethon](https://github.com/LonamiWebs/Telethon)
+You can upload a file to Telegram once, and send it again to others or do things with file_id.
+So when you upload a file, you can see the file_id.
+So now what? If you have a Telegram bot and you have 50MB limitation for uploading and send to users, you can bypass this limitation by this trick and upload files upto 1.5GB and pass it by file_id or message_id or...
 
 ### Todos
 
@@ -101,5 +91,24 @@ See [Telethon](https://github.com/LonamiWebs/Telethon)
  - Upload and download a directory
  - Make compatible with windows
 
-### Hmm.. 
+### Issues
+Feel free to submit issues and enhancement requests.
+
+### Contributing
+Please refer to each project's style and contribution guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
+
+ 1. **Fork** the repo on GitHub
+ 2. **Clone** the project to your own machine
+ 3. **Commit** changes to your own branch
+ 4. **Push** your work back up to your fork
+ 5. Submit a **Pull request** so that we can review your changes
+
+NOTE: Be sure to merge the latest from "upstream" before making a pull request!
+
+#### Python + Telethon 
+[![Python](https://www.python.org/static/community_logos/python-powered-w-200x80.png)](https://www.python.org/psf-landing/)
+See [Telethon](https://github.com/LonamiWebs/Telethon)
+
+### LICENSE
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

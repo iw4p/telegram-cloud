@@ -34,7 +34,7 @@ $ pip3 install telegram-cloud
 Also can be found on [pypi](https://pypi.org/project/telegram-cloud/)
 ### How can I use it?
   - install the package by pip package manager.
-  - after installing, type 'tglogin' on your terminal
+  - after installing, type `tglogin` on your terminal
   - Now you need to get api_id and api_hash from here [Telegram](https://my.telegram.org/)
   from [Telethon document](https://docs.telethon.dev/en/latest/basic/signing-in.html):
     >Before working with Telegram’s API, you need to get your own API ID and hash:
@@ -42,7 +42,7 @@ Also can be found on [pypi](https://pypi.org/project/telegram-cloud/)
     Click under API Development tools.
     A Create new application window will appear. Fill in your application details. There is no need to enter any URL, and only the first two fields (App title and Short name) can currently be changed later.
     Click on Create application at the end. Remember that your API hash is secret and Telegram won’t let you revoke it. Don’t post it anywhere!
-  - After that you able to call 'tgcloud' on your terminal.
+  - After that you able to call `tgcloud` on your terminal.
   
 ### Commands
 
@@ -52,7 +52,7 @@ telegram-cloud is currently working with the following commands.
 | ------ | ------ |
 | --mode / -m | Two modes for specify what you want, Available modes: download - upload |
 | --name / -n | A Name you choose while tglogin-ing and use for specify the current user you work on it |
-| --username / -u | Target username that you want to send file, type 'me' if you want to get it on your 'saved messages' |
+| --username / -u | Target username that you want to send file, type `me` if you want to get it on your `saved messages` |
 | --path / -p | For download mode: pass simple directory path like "/Users/nima/Desktop/Iwanttoescapefrom/"|
 | --path / -p | For upload mode: pass file path like "/Users/nima/Desktop/Iwanttoescapefrom/Iran.zip"|
 | --caption / -c | For download mode: pass the name of file or caption to crawl and download|
@@ -89,6 +89,11 @@ You can upload a file to Telegram once, and send it again to others or do things
 So when you upload a file, you can see the file_id.
 So now what? If you have a Telegram bot and you have 50MB limitation for uploading and send to users, you can bypass this limitation by this trick and upload files upto 1.5GB and pass it by file_id or message_id or...
 
+### Good to know
+The config file can be found on `~/.telegram-cloud/`
+Each login make *.session file which is located there and it cause script for logged-in user works globally.
+Inside `telegram-cloud-config.ini`, you can find api_hash and api_id and name you've entered by `tglogin` 
+
 ### Todos
 
  - Upload and download multiple files
@@ -110,8 +115,9 @@ Please refer to each project's style and contribution guidelines for submitting 
 NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 
 #### Python + Telethon 
-[![Python](https://www.python.org/static/community_logos/python-powered-w-200x80.png)](https://www.python.org/psf-landing/)
-See [Telethon](https://github.com/LonamiWebs/Telethon)
+ - [![Python](https://www.python.org/static/community_logos/python-powered-w-200x80.png)](https://www.python.org/psf-landing/)
+
+ - See [Telethon](https://github.com/LonamiWebs/Telethon)
 
 ### LICENSE
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

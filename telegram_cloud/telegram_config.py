@@ -33,6 +33,7 @@ def get_app_data():
         with open(path, 'w') as configfile:
             config.write(configfile)
 
+
     return api_id, api_hash, unique_name
 
 

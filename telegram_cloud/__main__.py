@@ -3,7 +3,7 @@
 from telethon import TelegramClient, events, utils
 
 import argparse, os, asyncio
-from .telegram_config import fetch_app_data
+from .telegram_config import fetch_app_data, directory
 
 loop = asyncio.get_event_loop()
 parser = argparse.ArgumentParser()
@@ -25,9 +25,10 @@ unique_name = args.name
 # Get the session data to use TelegramClient
 api_id, api_hash, name = fetch_app_data(unique_name)
 
-path = os.path.expanduser('~/.local/share/' + name)
-
-client = TelegramClient(path, api_id, api_hash)
+# path = os.path.expanduser('~/.local/share/' + name)
+client_name = (directory + unique_name + '.session')
+print(directory, client_name)
+client = TelegramClient(client_name, api_id, api_hash)
 
 async def main():
     

@@ -18,8 +18,6 @@ You can also:
   - Use it for multiple accounts, download from one Telegram account and upload that on another account, there is no difficulty 
   - download files with file_id
 
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
-
 ### Hmm what is this?
 
 It's a python library for [Telegram messenger](https://telegram.org/), which can give you an ability to download, upload, and more options to do with your Telegram account on CLI.

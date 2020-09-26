@@ -58,6 +58,7 @@ telegram-cloud is currently working with the following commands.
 
 
 ### Need more examples?
+## Unix based operating systems
 Download a music from my saved messages and save it on /Users/nima/Desktop/:
 ```sh
 $ tgcloud -m download -n nima -u me -p "/Users/nima/Desktop/" -c "sad but true"
@@ -66,7 +67,7 @@ $ tgcloud -m download -n nima -u me -p "/Users/nima/Desktop/" -c "sad but true"
 $ tgcloud --mode download --name nima --username me --path "/Users/nima/Desktop/" --caption "sad but true"
 ```
 
-Upload a banner with caption to my saved messages :
+Upload a banner with caption to my saved messages:
 ```sh
 $ tgcloud -m upload -n nima -u me -p "/Users/nima/Desktop/banner.png" -c "Help me"
 ```
@@ -74,13 +75,19 @@ $ tgcloud -m upload -n nima -u me -p "/Users/nima/Desktop/banner.png" -c "Help m
 $ tgcloud --mode upload --name nima --username me --path "/Users/nima/Desktop/banner.png" --caption "Help me"
 ```
 
-Upload a pdf to an telegram ID :
+Upload a pdf to an telegram ID:
 ```sh
 $ tgcloud -m upload -n nima -u @autisticbruh -p "/Users/nima/Desktop/file.pdf" -c "Help me"
 ```
-Search and download a zip from telegram chat_id group :
+Search and download a zip from telegram chat_id group:
 ```sh
 $ tgcloud -m download -n nima -u -1001240213443 -p "/Users/nima/Desktop/" -c "best memes"
+```
+## not Unix (Lol I mean windows)
+Just like unix but **CAREFUL** about paths
+Download all PDFs from your saved messages and save it on C:\Users\Nima\Desktop:
+```sh
+$ tgcloud -m download -n nima -u me -p "C:\Users\Nima\Desktop" -c ".pdf"
 ```
 ### What is file_id?
 from [Telegram Doc](https://core.telegram.org/api/files):
@@ -91,15 +98,17 @@ So when you upload a file, you can see the file_id.
 So now what? If you have a Telegram bot and you have 50MB limitation for uploading and send to users, you can bypass this limitation by this trick and upload files upto 1.5GB and pass it by file_id or message_id or...
 
 ### Good to know
-The config file can be found on `~/.telegram-cloud/`
+The config file can be found on `~/.telegram-cloud/` (Also `~\.telegram-cloud\` in windows)
 Each login make *.session file which is located there and it cause script for logged-in user works globally.
 Inside `telegram-cloud-config.ini`, you can find api_hash and api_id and name you've entered by `tglogin` 
 
-### Todos
 
- - Upload and download multiple files
- - Upload and download a directory
- - Make compatible with windows
+### To do
+
+- [ ] Upload and download multiple files
+- [ ] Upload and download a directory
+- [ ] Add progress bar while downloading/uploading 
+- [x] Make compatible with windows
 
 ### Issues
 Feel free to submit issues and enhancement requests.

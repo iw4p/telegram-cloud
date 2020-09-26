@@ -58,8 +58,10 @@ telegram-cloud is currently working with the following commands.
 
 
 ### Need more examples?
+Are you done with `tglogin`? so come with me.
+
 ## Unix based operating systems
-Download a music from my saved messages and save it on /Users/nima/Desktop/:
+`Download` a music from my `saved messages` and save it on `/Users/nima/Desktop/`:
 ```sh
 $ tgcloud -m download -n nima -u me -p "/Users/nima/Desktop/" -c "sad but true"
 ```
@@ -67,7 +69,7 @@ $ tgcloud -m download -n nima -u me -p "/Users/nima/Desktop/" -c "sad but true"
 $ tgcloud --mode download --name nima --username me --path "/Users/nima/Desktop/" --caption "sad but true"
 ```
 
-Upload a banner with caption to my saved messages:
+`Upload` a banner with caption to my `saved messages`:
 ```sh
 $ tgcloud -m upload -n nima -u me -p "/Users/nima/Desktop/banner.png" -c "Help me"
 ```
@@ -75,17 +77,17 @@ $ tgcloud -m upload -n nima -u me -p "/Users/nima/Desktop/banner.png" -c "Help m
 $ tgcloud --mode upload --name nima --username me --path "/Users/nima/Desktop/banner.png" --caption "Help me"
 ```
 
-Upload a pdf to an telegram ID:
+`Upload` a pdf to an `telegram ID`:
 ```sh
 $ tgcloud -m upload -n nima -u @autisticbruh -p "/Users/nima/Desktop/file.pdf" -c "Help me"
 ```
-Search and download a zip from telegram chat_id group:
+`Search` and `download` a zip from telegram `chat_id group`:
 ```sh
 $ tgcloud -m download -n nima -u -1001240213443 -p "/Users/nima/Desktop/" -c "best memes"
 ```
 ## not Unix (Lol I mean windows)
-Just like unix but **CAREFUL** about paths
-Download all PDFs from your saved messages and save it on C:\Users\Nima\Desktop:
+Just like unix but **CAREFUL** about paths, your path must not end with `\` !!
+`Download` all PDFs from your `saved messages` and save it on `C:\Users\Nima\Desktop`:
 ```sh
 $ tgcloud -m download -n nima -u me -p "C:\Users\Nima\Desktop" -c ".pdf"
 ```

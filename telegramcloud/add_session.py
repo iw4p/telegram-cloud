@@ -17,4 +17,3 @@ def cli():
             move(unique_name + '.session', Path(directory))
         except WindowsError:
             pass
-        

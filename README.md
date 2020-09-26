@@ -68,6 +68,9 @@ $ tgcloud --mode download --name nima --username me --path "/Users/nima/Desktop/
 
 Upload a banner with caption to my saved messages :
 ```sh
+$ tgcloud -m upload -n nima -u me -p "/Users/nima/Desktop/banner.png" -c "Help me"
+```
+```sh
 $ tgcloud --mode upload --name nima --username me --path "/Users/nima/Desktop/banner.png" --caption "Help me"
 ```
 

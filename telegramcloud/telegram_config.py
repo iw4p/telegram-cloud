@@ -4,8 +4,7 @@ from pathlib import Path
 home = str(Path.home())
 directory = (home + "/.telegram-cloud/")
 file_name = "telegram-cloud-config.ini"
-path = os.path.expanduser(directory + file_name)
-
+path = Path(directory + file_name)
 config = configparser.ConfigParser()
 
 def get_app_data():
@@ -47,4 +46,3 @@ def fetch_app_data(unique_name):
         else:
             print('Please first type tglogin command to log in your Telegram account')
             return
-

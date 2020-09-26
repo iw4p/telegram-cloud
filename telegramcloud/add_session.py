@@ -1,6 +1,7 @@
 from telethon import TelegramClient
 from .telegram_config import get_app_data, directory
 from shutil import move
+from pathli import Path
 
 api_id, api_hash, unique_name = get_app_data()
 client = TelegramClient(unique_name, api_id, api_hash)
@@ -12,4 +13,8 @@ async def main():
 def cli():
     with client:
         client.loop.run_until_complete(main())
-        move(unique_name + '.session', directory)
+        try:
+            move(unique_name + '.session', Path(directory))
+        except WindowsError:
+            pass
+        

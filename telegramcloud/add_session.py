@@ -1,5 +1,5 @@
 from telethon import TelegramClient
-from telegram_config import get_app_data, directory
+from .telegram_config import get_app_data, directory
 from shutil import move
 from pathlib import Path
 
@@ -17,3 +17,4 @@ def cli():
             move(unique_name + '.session', Path(directory))
         except WindowsError:
             pass
+        

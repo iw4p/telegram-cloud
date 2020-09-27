@@ -1,12 +1,18 @@
 # Telegram-cloud (A.K.A tgcloud)
-
-
 [![Telegram-cloud](https://github.com/iw4p/telegram-cloud/blob/master/images/Group.png
 )](https://pypi.org/project/telegram-cloud/)
 
 
 ## telegram-cloud
-### Download and upload files via telegram, Use your telegram account as a free cloud storage.
+### Download and upload files via telegram, Use your telegram account as free cloud storage.
+
+[![Version](https://img.shields.io/pypi/v/telegram-cloud.svg)](https://pypi.python.org/pypi/telegram-cloud)
+[![PyPI version](https://img.shields.io/pypi/v/telegram-cloud.svg)](https://pypi.org/project/telegram-cloud)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/telegram-cloud.svg)](#Installation)
+[![Downloads](https://pepy.tech/badge/telegram-cloud)](https://pepy.tech/project/telegram-cloud)
+[![StackOverflow](https://img.shields.io/static/v1?label=stackoverflow%20tag&logo=stackoverflow&logoColor=fe7a16&color=brightgreen&message=telegram-cloud)](https://stackoverflow.com/tags/telegram-cloud)
+ [![Build demos workflow](https://github.com/iw4p/telegram-cloud/workflows/Build%20demos/badge.svg?branch=master)](https://github.com/iw4p/telegram-cloud/actions?query=workflow%3A"Build+demos") 
+[![Documentation Status](https://readthedocs.org/projects/telegram-cloud/badge/?version=latest)](https://telegram-cloud.readthedocs.io/en/latest/?badge=latest)
 
 Uploader, Downloader, Crawler, Bot 50MB limitation bypasser.
 
@@ -103,7 +109,6 @@ So now what? If you have a Telegram bot and you have 50MB limitation for uploadi
 The config file can be found on `~/.telegram-cloud/` (Also `~\.telegram-cloud\` in windows)
 Each login make *.session file which is located there and it cause script for logged-in user works globally.
 Inside `telegram-cloud-config.ini`, you can find api_hash and api_id and name you've entered by `tglogin` 
-
 
 ### To do
 

@@ -14,6 +14,9 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+# specify the master doc, otherwise the build at read the docs fails
+master_doc = 'index'
+
 
 # -- Project information -----------------------------------------------------
 

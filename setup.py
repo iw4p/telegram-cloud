@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="telegram-cloud",
-    version="1.1.1",
+    version="1.1.2",
     description="Download and upload files via telegram up to 1.5GB, CLI",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -30,6 +30,7 @@ setup(
         "console_scripts": [
             "tgcloud = telegramcloud.__main__:cli",
             "tglogin = telegramcloud.add_session:cli",
+            "tginfo = telegramcloud.scripts.tginfo:cli",
         ]
     },
 )

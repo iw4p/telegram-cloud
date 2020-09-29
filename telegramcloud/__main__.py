@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import argparse, os
 from telethon import (
     TelegramClient,
@@ -11,14 +9,14 @@ from .telegram_config import (
     directory
 )
 from .utils.args import (
-    get_args
+    tgcloud_args
 )
 from .utils.utils import (
     target_username_handler,
     session_retriever
 )
 
-args = get_args()
+args = tgcloud_args()
 
 # Get session name from CLI
 unique_name = args.name

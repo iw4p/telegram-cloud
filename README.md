@@ -6,7 +6,6 @@
 ## telegram-cloud
 ### Download and upload files via telegram, Use your telegram account as free cloud storage.
 
-[![Version](https://img.shields.io/pypi/v/telegram-cloud.svg)](https://pypi.python.org/pypi/telegram-cloud)
 [![PyPI version](https://img.shields.io/pypi/v/telegram-cloud.svg)](https://pypi.org/project/telegram-cloud)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/telegram-cloud.svg)](#Installation)
 [![Downloads](https://pepy.tech/badge/telegram-cloud)](https://pepy.tech/project/telegram-cloud)

@@ -1,5 +1,5 @@
 # Telegram-cloud (A.K.A tgcloud)
-[![Telegram-cloud](https://github.com/iw4p/telegram-cloud/blob/master/images/Group.png
+[![Telegram-cloud](https://github.com/iw4p/telegram-cloud/raw/master/images/Group.png
 )](https://pypi.org/project/telegram-cloud/)
 
 
@@ -10,7 +10,7 @@
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/telegram-cloud.svg)](#Installation)
 [![Downloads](https://pepy.tech/badge/telegram-cloud)](https://pepy.tech/project/telegram-cloud)
 [![StackOverflow](https://img.shields.io/static/v1?label=stackoverflow%20tag&logo=stackoverflow&logoColor=fe7a16&color=brightgreen&message=telegram-cloud)](https://stackoverflow.com/tags/telegram-cloud)
- [![Build demos workflow](https://github.com/iw4p/telegram-cloud/workflows/Build%20demos/badge.svg?branch=master)](https://github.com/iw4p/telegram-cloud/actions?query=workflow%3A"Build+demos") 
+ [![Build demos workflow](https://github.com/iw4p/telegram-cloud/workflows/Upload%20Python%20Package/badge.svg?branch=master)](https://github.com/iw4p/telegram-cloud/actions?query=workflow%3A"Build+demos") 
 [![Documentation Status](https://readthedocs.org/projects/telegram-cloud/badge/?version=latest)](https://telegram-cloud.readthedocs.io/en/latest/?badge=latest)
 
 Uploader, Downloader, Crawler, Bot 50MB limitation bypasser.

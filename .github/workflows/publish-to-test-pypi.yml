@@ -2,8 +2,12 @@ name: Publish Python distribution to PyPI and TestPyPI
 
 on:
   push:
+    branches:
+      - master
+      - releases/*
     tags:
-      - '*'
+      - v*
+      
 jobs:
   build-n-publish:
     name: Publish Python distribution to PyPI and TestPyPI

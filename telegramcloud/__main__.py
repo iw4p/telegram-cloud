@@ -24,6 +24,14 @@ unique_name = args.name
 # Create client obj
 client = session_retriever(TelegramClient, unique_name)
 
+# Printing download progress
+def download_callback(current, total):
+    print('Downloaded', current, 'out of', total, 'bytes: {:.2%}'.format(current / total))
+
+# Printing upload progress
+def upload_callback(current, total):
+    print('Uploaded', current, 'out of', total, 'bytes: {:.2%}'.format(current / total))
+
 async def main():
 
     # Get target username 
@@ -35,12 +43,12 @@ async def main():
     if args.mode == 'download':
         if args.caption and args.path and username:
             async for message in client.iter_messages(entity=username, search=args.caption):
-                await client.download_media(message, args.path)
+                await client.download_media(message, args.path, progress_callback=download_callback)
 
     # Upload file to specific target_chat and retrieve the file_id
     elif args.mode == 'upload':
         if args.path and username:
-            message = await client.send_file(entity=target_chat, file=args.path, caption=args.caption)
+            message = await client.send_file(entity=target_chat, file=args.path, caption=args.caption, progress_callback=upload_callback)
             print("File id: " + message.file.id)
 
 def cli():

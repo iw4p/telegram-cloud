@@ -1,20 +1,8 @@
 import argparse, os
-from telethon import (
-    TelegramClient,
-    events,
-    utils
-)
-from .telegram_config import (
-    fetch_app_data,
-    directory
-)
-from .utils.args import (
-    tgcloud_args
-)
-from .utils.utils import (
-    target_username_handler,
-    session_retriever
-)
+from telethon import TelegramClient, events, utils
+from .telegram_config import fetch_app_data, directory
+from .utils.args import tgcloud_args
+from .utils.utils import target_username_handler, session_retriever
 
 args = tgcloud_args()
 

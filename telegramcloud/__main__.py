@@ -8,10 +8,10 @@ from .telegram_config import (
     fetch_app_data,
     directory
 )
-from utils.args import (
+from .utils.args import (
     tgcloud_args
 )
-from utils.utils import (
+from .utils.utils import (
     target_username_handler,
     session_retriever
 )

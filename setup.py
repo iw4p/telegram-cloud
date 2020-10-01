@@ -24,7 +24,7 @@ setup(
         "Programming Language :: Python :: 3.7",
     ],
     include_package_data=True,
-    install_requires=["telethon",],
+    install_requires=["telethon","cryptg"],
     packages=["telegramcloud","telegramcloud.scripts", "telegramcloud.utils"],
     entry_points={
         "console_scripts": [

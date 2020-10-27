@@ -25,7 +25,7 @@ To verify that the library is installed correctly, run the following command:
 If there's not any error, It means telegram-cloud installed successfully, but if you see invalid syntax error, try installing again.
 
 
-Optional Dependencies (Source_)
+Optional Dependencies
 =====================
 
 If cryptg_ is installed, **the library will work a lot faster**, since
@@ -60,7 +60,6 @@ manually.
 
     Thanks to `@bb010g`_ for writing down this nice list.
 
-.. _Source: https://docs.telethon.dev/en/latest/basic/installation.html#optional-dependencies
 .. _cryptg: https://github.com/cher-nov/cryptg
 .. _pyaes: https://github.com/ricmoo/pyaes
 .. _pillow: https://python-pillow.org

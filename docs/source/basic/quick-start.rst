@@ -1,0 +1,1 @@
+https://docs.telethon.dev/en/latest/basic/quick-start.html

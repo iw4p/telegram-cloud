@@ -22,7 +22,7 @@ async def main():
             number = 0
             async for _ in client.iter_messages(entity=username, search=args.search):
                 number += 1
-            print(f"{number} {args.search} found.")
+            print("{} {} found.".format(number, args.search))
 
         else:
 

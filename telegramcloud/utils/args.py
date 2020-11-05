@@ -23,3 +23,13 @@ def tginfo_args():
     parser.add_argument("--search", "-s", help="Search for specific extension likfe .pdf or name", required=False)    
     args = parser.parse_args()
     return args
+
+def tgsend_args():
+
+    parser = argparse.ArgumentParser()
+    # Read arguments from the command line
+    parser.add_argument("--name", "-n", help = "That unique name you've set at the first", required = True)
+#    parser.add_argument("--username", "-u", help = "Set target username for getting info from conversation", required = True)
+#    parser.add_argument("--search", "-s", help="Search for specific extension likfe .pdf or name", required=False)    
+    args = parser.parse_args()
+    return args

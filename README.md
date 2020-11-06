@@ -99,6 +99,16 @@ $ tgcloud -m upload -n nima -u @autisticbruh -p "/Users/nima/Desktop/file.pdf" -
 ```sh
 $ tgcloud -m download -n nima -u -1001240213443 -p "/Users/nima/Desktop/" -c "best memes"
 ```
+
+Send a `silent` text message to a `chat group`:
+```sh
+$ tgsend -n anightshade -u -1001240213443 --silent "Panda eats shoots and leaves"
+```
+
+Send a fortune cookie to yourself via `stdin`:
+```sh
+$ fortune | tgsend -n anightshade -u me --stdin
+```
 ## not Unix (Lol I mean windows)
 Just like unix but **CAREFUL** about paths, your path must not end with `\` !!
 `Download` all PDFs from your `saved messages` and save it on `C:\Users\Nima\Desktop`:

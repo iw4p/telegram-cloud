@@ -43,9 +43,16 @@ async def main():
 
     if len(message) == 0:
         print ("No text specified. Can't send empty message")
-        exit (1)
+        sys.exit (1)
 
-    await client.send_message(entity=target_chat, message=message, silent=args.silent)
+    if args.parse_mode == "text":
+        parse_mode = None
+    if args.parse_mode == "markdown":
+        parse_mode = "md"
+    if args.parse_mode == "html":
+        parse_mode = "html"
+
+    await client.send_message(entity=target_chat, message=message, silent=args.silent, parse_mode=parse_mode)
 
 
 def cli():

@@ -1,5 +1,5 @@
 # Telegram-cloud (A.K.A tgcloud)
-[![Telegram-cloud](https://github.com/iw4p/telegram-cloud/raw/master/images/Group.png
+[![Telegram-cloud](https://github.com/anightshade/telegram-cloud/raw/master/images/Group.png
 )](https://pypi.org/project/telegram-cloud/)
 
 

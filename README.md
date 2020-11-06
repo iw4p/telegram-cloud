@@ -1,5 +1,5 @@
 # Telegram-cloud (A.K.A tgcloud)
-[![Telegram-cloud](https://github.com/anightshade/telegram-cloud/raw/master/images/Group.png
+[![Telegram-cloud](https://github.com/iw4p/telegram-cloud/raw/master/images/Group.png
 )](https://pypi.org/project/telegram-cloud/)
 
 
@@ -131,10 +131,11 @@ Inside `telegram-cloud-config.ini`, you can find api_hash and api_id and name yo
 
 ### To do
 
+- [x] Send message via cli (`tgsend`)
 - [ ] Upload and download multiple files
 - [ ] Upload and download a directory
-- [ ] Add progress bar while downloading/uploading 
-- [x] Make compatible with windows
+- [x] Add progress bar while downloading/uploading 
+- [x] Add progress bar while downloading/uploading 
 
 ### Issues
 Feel free to submit issues and enhancement requests.
@@ -154,6 +155,12 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
  - [![Python](https://www.python.org/static/community_logos/python-powered-w-200x80.png)](https://www.python.org/psf-landing/)
 
  - See [Telethon](https://github.com/LonamiWebs/Telethon)
+
+# Contributors 🤝
+
+Special thanks to Contributors
+
+[@anightshade](https://github.com/anightshade): For adding `tgsend` and fixing bugs!
 
 ### LICENSE
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

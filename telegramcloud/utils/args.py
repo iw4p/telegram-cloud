@@ -27,7 +27,7 @@ def tginfo_args():
 def tgsend_args():
 
     parser = argparse.ArgumentParser(description="Send Telegram messages to users, channels and groups",
-                                     epilog="Homepage: https://github.com/anightshade/telegram-cloud")
+                                     epilog="Homepage: https://github.com/iw4p/telegram-cloud")
     # Read arguments from the command line
     parser.add_argument("message", help="Message to send", nargs="*")
     parser.add_argument("--name", "-n", help = "Unique profile name you've set at the first run", required = True)

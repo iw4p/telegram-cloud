@@ -1,7 +1,11 @@
-from telethon import TelegramClient
+import os
 from shutil import move
 from pathlib import Path
-
+from telethon import (
+    TelegramClient,
+    events,
+    utils
+)
 from .telegram_config import (
     fetch_app_data,
     directory

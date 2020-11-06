@@ -1,4 +1,4 @@
-import os
+import os, sys
 from shutil import move
 from pathlib import Path
 from telethon import (
@@ -29,7 +29,23 @@ client = session_retriever(TelegramClient, unique_name)
 
 
 async def main():
-    await client.send_message('me', 'tgsend first message')
+
+    # Get target username 
+    username = args.username
+
+    target_chat = await target_username_handler(client, username)
+    message = " ".join(args.message)
+
+    if args.stdin:
+        message = sys.stdin.read()
+        if len(message) == 0:
+            sys.exit(1)
+
+    if len(message) == 0:
+        print ("No text specified. Can't send empty message")
+        exit (1)
+
+    await client.send_message(entity=target_chat, message=message, silent=args.silent)
 
 
 def cli():

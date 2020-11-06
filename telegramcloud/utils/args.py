@@ -26,10 +26,13 @@ def tginfo_args():
 
 def tgsend_args():
 
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Send Telegram messages to users, channels and groups",
+                                     epilog="Homepage: https://github.com/anightshade/telegram-cloud")
     # Read arguments from the command line
-    parser.add_argument("--name", "-n", help = "That unique name you've set at the first", required = True)
-#    parser.add_argument("--username", "-u", help = "Set target username for getting info from conversation", required = True)
-#    parser.add_argument("--search", "-s", help="Search for specific extension likfe .pdf or name", required=False)    
+    parser.add_argument("message", help="Message to send", nargs="*")
+    parser.add_argument("--name", "-n", help = "Unique profile name you've set at the first run", required = True)
+    parser.add_argument("--username", "-u", help = "Recipient username or chat id", required = True)
+    parser.add_argument("--stdin", help="Read message text from stdin", action="store_true")
+    parser.add_argument("--silent", help="Send silently, user will receive notification without sound", required=False, action="store_true")
     args = parser.parse_args()
     return args

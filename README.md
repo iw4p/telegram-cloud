@@ -22,6 +22,7 @@ Uploader, Downloader, Crawler, Bot 50MB limitation bypasser.
 You can also:
   - Use it for multiple accounts, download from one Telegram account and upload that on another account, there is no difficulty 
   - download files with file_id
+  - Send regular and silent messages to any user, channel or chat
 
 ### Hmm what is this?
 
@@ -61,6 +62,14 @@ telegram-cloud is currently working with the following commands.
 | --caption / -c | For download mode: pass the name of file or caption to crawl and download|
 | --caption / -c | For upload mode: write the caption to see it under your file |
 
+tgsend accepts these arguments:
+
+| args | help |
+| ------ | ------ |
+| --name / -n | A Name you choose while tglogin-ing and use for specify the current user you work on it |
+| --username / -u | Target username that you want to send file, type `me` if you want to get it on your `saved messages` |
+| --silent | Disable audible notification |
+| --stdin | Read message text from stdin |
 
 ### Need more examples?
 Are you done with `tglogin`? so come with me.

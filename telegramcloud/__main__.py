@@ -51,9 +51,17 @@ async def main():
 
     # Upload file to specific target_chat and retrieve the file_id
     elif args.mode == 'upload':
+
+        if args.parse_mode == "text":
+            parse_mode = None
+        if args.parse_mode == "markdown":
+            parse_mode = "md"
+        if args.parse_mode == "html":
+            parse_mode = "html"
+
         if args.path and username:
             try:
-                message = await client.send_file(entity=target_chat, file=args.path, caption=args.caption, progress_callback=upload_callback)
+                message = await client.send_file(entity=target_chat, file=args.path, caption=args.caption, progress_callback=upload_callback, parse_mode=parse_mode)
                 print("File id: {}".format(message.file.id))
             except:
                 print("Something went wrong, make sure the directory path is valid.")

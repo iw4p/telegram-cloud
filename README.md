@@ -72,6 +72,14 @@ tgsend accepts these arguments:
 | --silent | Disable audible notification |
 | --stdin | Read message text from stdin |
 
+tginfo accepts these arguments:
+
+| args | help |
+| ------ | ------ |
+| --name / -n | A Name you choose while tglogin-ing and use for specify the current user you work on it |
+| --username / -u | Target username that you want to fetch info, type `me` if you want to get it on your `saved messages` |
+| --search / -s | search specific extension or text |
+
 ### Need more examples?
 Are you done with `tglogin`? so come with me.
 
@@ -109,7 +117,15 @@ Send a fortune cookie to yourself via `stdin`:
 ```sh
 $ fortune | tgsend -n anightshade -u me --stdin
 ```
+`Search` all PDFs inside a telegram conversation:
+```sh
+$ tginfo -n testSession -u me -s ".pdf
+```
 
+`Get info` for all Media inside a telegram conversation:
+```sh
+$ tginfo -n testSession -u me
+```
 ## not Unix (Lol I mean windows)
 Just like unix but **CAREFUL** about paths, your path must not end with `\` !!
 `Download` all PDFs from your `saved messages` and save it on `C:\Users\Nima\Desktop`:

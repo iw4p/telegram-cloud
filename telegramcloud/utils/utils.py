@@ -14,6 +14,7 @@ def session_retriever(TelegramClient, unique_name):
         quit()
     else:
         api_id, api_hash, _ = fetch_app_data(unique_name)
+
     client_name = (directory + unique_name + '.session')
     client = TelegramClient(client_name, api_id, api_hash)
     return client

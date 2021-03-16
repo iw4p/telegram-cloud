@@ -39,7 +39,6 @@ async def main():
         if args.text and username:
             async for message in client.iter_messages(args.username):
                 if message.text == args.text:
-                    print(message.id, ':', message.text)
                     await client.edit_message(username, message.id, args.newtext)
                     break
     
@@ -47,14 +46,12 @@ async def main():
         if args.text and username:
             async for message in client.iter_messages(args.username):
                 if message.text == args.text:
-                    print(message.id, ':', message.text)
                     await client.edit_message(username, message.id, args.newtext)
 
     elif args.mode == 'delete':
         if args.text and username:
             async for message in client.iter_messages(args.username):
                 if message.text == args.text:
-                    print(message.id, ':', message.text)
                     await client.delete_messages(username, message.id)
                     break
         
@@ -62,7 +59,6 @@ async def main():
         if args.text and username:
             async for message in client.iter_messages(args.username):
                 if message.text == args.text:
-                    print(message.id, ':', message.text)
                     await client.delete_messages(username, message.id)
 
 def cli():

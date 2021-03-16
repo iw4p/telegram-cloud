@@ -37,9 +37,24 @@ async def main():
 
     elif args.mode == 'edit':
         if args.text and username:
-            await client.edit_message(username, args.text, args.newtext)
+            async for message in client.iter_messages(args.username):
+                if message.text == args.text:
+                    print(message.id, ':', message.text)
+                    await client.edit_message(username, message.id, args.newtext)
+                    break
+    
+    elif args.mode == 'editall':
+        if args.text and username:
+            async for message in client.iter_messages(args.username):
+                if message.text == args.text:
+                    print(message.id, ':', message.text)
+                    await client.edit_message(username, message.id, args.newtext)
 
     elif args.mode == 'delete':
+        if args.text and username:
+            await client.delete_messages(username, args.text)
+        
+    elif args.mode == 'deleteall':
         if args.text and username:
             await client.delete_messages(username, args.text)
 

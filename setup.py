@@ -32,6 +32,7 @@ setup(
             "tglogin = telegramcloud.add_session:cli",
             "tginfo = telegramcloud.scripts.tginfo:cli",
             "tgsend = telegramcloud.scripts.tgsend:cli",
+            "tgutil = telegramcloud.scripts.tgutil:cli",
         ]
     },
 )

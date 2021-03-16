@@ -52,14 +52,18 @@ async def main():
 
     elif args.mode == 'delete':
         if args.text and username:
-            await client.delete_messages(username, args.text)
+            async for message in client.iter_messages(args.username):
+                if message.text == args.text:
+                    print(message.id, ':', message.text)
+                    await client.delete_messages(username, message.id)
+                    break
         
     elif args.mode == 'deleteall':
         if args.text and username:
-            await client.delete_messages(username, args.text)
-
-    # await client.send_message(entity=target_chat, message=message, silent=args.silent, parse_mode=parse_mode)
-
+            async for message in client.iter_messages(args.username):
+                if message.text == args.text:
+                    print(message.id, ':', message.text)
+                    await client.delete_messages(username, message.id)
 
 def cli():
     with client:

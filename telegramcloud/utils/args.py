@@ -51,5 +51,6 @@ def tgutil_args():
     parser.add_argument("--mode", "-m", help="Change mode to edit or delete", required=True)
     parser.add_argument("--text", help="Change mode to edit or delete", required=True)
     parser.add_argument("--newtext", help="Change mode to edit or delete")
+    parser.add_argument("--verbose", "-v", help="Verbose and show what is really going on")
     args = parser.parse_args()
     return args

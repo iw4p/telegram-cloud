@@ -8,7 +8,7 @@ from telethon import (
 )
 
 from ..utils.args import (
-    tgsend_args
+    tgutil_args
 )
 from ..utils.utils import (
     target_username_handler,
@@ -16,13 +16,12 @@ from ..utils.utils import (
 )
 
 
-args = tgsend_args()
+args = tgutil_args()
 
 # Get session name from CLI
 unique_name = args.name
 
 client = session_retriever(TelegramClient, unique_name)
-
 
 async def main():
 

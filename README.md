@@ -15,7 +15,7 @@
 
 Uploader, Downloader, Crawler, Bot 50MB limitation bypasser.
 
-  - Upload file upto 1.5GB
+  - Upload file upto 2 GB
   - Download file from every conversation, group, channel, ...
   - Crawling! search by name or caption for a specific file to download it
 
@@ -138,7 +138,7 @@ from [Telegram Doc](https://core.telegram.org/api/files):
 
 You can upload a file to Telegram once, and send it again to others or do things with file_id.
 So when you upload a file, you can see the file_id.
-So now what? If you have a Telegram bot and you have 50MB limitation for uploading and send to users, you can bypass this limitation by this trick and upload files upto 1.5GB and pass it by file_id or message_id or...
+So now what? If you have a Telegram bot and you have 50MB limitation for uploading and send to users, you can bypass this limitation by this trick and upload files upto 2 GB and pass it by file_id or message_id or...
 
 ### Good to know
 The config file can be found on `~/.telegram-cloud/` (Also `~\.telegram-cloud\` in windows)

@@ -40,3 +40,16 @@ def tgsend_args():
     parser.add_argument("--silent", help="Send silently, user will receive notification without sound", required=False, action="store_true")
     args = parser.parse_args()
     return args
+
+def tgutil_args():
+
+    parser = argparse.ArgumentParser(description="Some good utils like edit and delete messages",
+                                     epilog="Homepage: https://github.com/iw4p/telegram-cloud")
+    # Read arguments from the command line
+    parser.add_argument("--name", "-n", help = "That unique name you've set at the first", required = True)
+    parser.add_argument("--username", "-u", help = "Set target username for getting info from conversation", required = True)
+    parser.add_argument("--mode", "-m", help="Change mode to edit or delete", required=True)
+    parser.add_argument("--text", help="Change mode to edit or delete", required=True)
+    parser.add_argument("--newtext", help="Change mode to edit or delete")
+    args = parser.parse_args()
+    return args

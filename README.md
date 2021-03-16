@@ -62,6 +62,16 @@ telegram-cloud is currently working with the following commands.
 | --caption / -c | For download mode: pass the name of file or caption to crawl and download|
 | --caption / -c | For upload mode: write the caption to see it under your file |
 
+tgutil accepts these arguments:
+
+| args | help |
+| ------ | ------ |
+| --name / -n | A Name you choose while tglogin-ing and use for specify the current user you work on it |
+| --username / -u | Target username's chat that you want to edit/delete message on it, type `me` if you want to get it on your `saved messages` |
+| --mode { edit, editall, delete, deleteall }| Choose what you need to do, delete/edit last message or deleteall/editall|
+| --text | the text that you are looking for to do operation on it |
+| --newtext | the new text that you want to be replaced with current text, can be used for `edit` and `editall` |
+
 tgsend accepts these arguments:
 
 | args | help |
@@ -115,11 +125,28 @@ $ tgsend -n anightshade -u -1001240213443 --silent "Panda eats shoots and leaves
 ```
 Send a fortune cookie to yourself via `stdin`:
 ```sh
-$ fortune | tgsend -n anightshade -u me --stdin
+$ tgsend -n anightshade -u me --stdin
 ```
 `Search` all PDFs inside a telegram conversation:
 ```sh
 $ tginfo -n testSession -u me -s ".pdf
+```
+
+`Edit` the last `hello` text message on your `saved message` to `bye`:
+```sh
+$ tgutil -n nimnim -u me --mode edit --text "hello" --newtext "bye"
+```
+`Edit` all `hello` text messages on your `saved message` to `bye`:
+```sh
+$ tgutil -n nimnim -u me --mode editall --text "hello" --newtext "bye"
+```
+`Delete` the last `hello` text message on your `saved message`:
+```sh
+$ tgutil -n nimnim -u me --mode delete --text "hello"
+```
+`Delete` all `hello` text messages on your `saved message`:
+```sh
+$ tgutil -n nimnim -u me --mode deleteall --text "hello"
 ```
 
 `Get info` for all Media inside a telegram conversation:
@@ -147,7 +174,11 @@ Inside `telegram-cloud-config.ini`, you can find api_hash and api_id and name yo
 
 ### To do
 
-- [x] Send message via cli (`tgsend`)
+- [x] Send a message via cli (`tgsend`)
+- [x] Delete a message via cli (`tgutil`)
+- [x] Edit a message via cli (`tgutil`)
+- [ ] Clean and compelete document (please help, please)
+- [ ] Code is super clean, need to be clean and have a good structure
 - [ ] Upload and download multiple files
 - [ ] Upload and download a directory
 - [x] Add progress bar while downloading/uploading 

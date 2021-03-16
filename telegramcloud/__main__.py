@@ -66,15 +66,6 @@ async def main():
             except:
                 print("Something went wrong, make sure the directory path is valid.")
 
-    elif args.mode == 'edit':
-        if args.caption and username:
-            client.edit_message(username, message_id, 'New text')
-
-    elif args.mode == 'delete':
-        if args.caption and username:
-            client.delete_messages(username, args.caption)
-
-
 def cli():
     with client:
         client.loop.run_until_complete(main())

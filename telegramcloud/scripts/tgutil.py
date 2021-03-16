@@ -29,25 +29,21 @@ async def main():
     username = args.username
 
     target_chat = await target_username_handler(client, username)
-    message = " ".join(args.message)
+    text = " ".join(args.text)
 
-    if args.stdin:
-        message = sys.stdin.read()
-        if len(message) == 0:
-            sys.exit(1)
-
-    if len(message) == 0:
-        print ("No text specified. Can't send empty message")
+    if len(text) == 0:
+        print ("No text specified. Can't delete/change empty text")
         sys.exit (1)
 
-    if args.parse_mode == "text":
-        parse_mode = None
-    if args.parse_mode == "markdown":
-        parse_mode = "md"
-    if args.parse_mode == "html":
-        parse_mode = "html"
+    elif args.mode == 'edit':
+        if args.text and username:
+            await client.edit_message(username, args.text, args.newtext)
 
-    await client.send_message(entity=target_chat, message=message, silent=args.silent, parse_mode=parse_mode)
+    elif args.mode == 'delete':
+        if args.text and username:
+            await client.delete_messages(username, args.text)
+
+    # await client.send_message(entity=target_chat, message=message, silent=args.silent, parse_mode=parse_mode)
 
 
 def cli():

@@ -36,6 +36,7 @@ def tgsend_args():
     parser.add_argument("--username", "-u", help = "Recipient username or chat id", required = True)
     parser.add_argument("--format", default="text", dest="parse_mode", choices=["text", "markdown", "html"],
                         help="Parse mode for message body. Choose from 'text', 'markdown', or 'html'. Default is 'text'")
+    parser.add_argument("--no-link-preview", dest="link_preview", help="Disable web link preview", action="store_true")
     parser.add_argument("--stdin", help="Read message text from stdin", action="store_true")
     parser.add_argument("--silent", help="Send silently, user will receive notification without sound", required=False, action="store_true")
     args = parser.parse_args()

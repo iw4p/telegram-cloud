@@ -79,6 +79,7 @@ tgsend accepts these arguments:
 | --name / -n | A Name you choose while tglogin-ing and use for specify the current user you work on it |
 | --username / -u | Target username that you want to send file, type `me` if you want to get it on your `saved messages` |
 | --format { text, markdown, html }| How to parse message body. Default is `text`|
+| --no-link-preview | Disable web link preview card for this message |
 | --silent | Disable audible notification |
 | --stdin | Read message text from stdin |
 

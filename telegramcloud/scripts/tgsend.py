@@ -48,7 +48,7 @@ async def main():
     if args.parse_mode == "html":
         parse_mode = "html"
 
-    await client.send_message(entity=target_chat, message=message, silent=args.silent, parse_mode=parse_mode)
+    await client.send_message(entity=target_chat, message=message, silent=args.silent, parse_mode=parse_mode, link_preview = not args.link_preview)
 
 
 def cli():

@@ -1,0 +1,44 @@
+cd funniest
+python3 setup.py sdist bdist_wheel\n
+cd Desktop/funniestnima
+rm -rf funniestnima.egg-info build dist
+python3 setup.py sdist bdist_wheel
+python3 -m twine check dist/*
+python3 -m twine upload dist/*
+pip install funniestnima==0.2
+
+dev package 
+
+python3 -m pip uninstall -e .
+pip3 uninstall telegram-cloud
+python3 setup.py sdist
+pip3 list
+python3 setup.py bdist_wheel
+ls -ltrh
+pip3 install -e .
+pip3 uninstall telegram-cloud
+pip3 install -e .
+
+# Search in chats for sending Retrieving 
+"""
+This function is good for searching between all conversations without knowing the telegram Username or telegram UserID
+But it is not useful and enable, maybe later, maybe never
+"""
+# async def chat_iter(client, search_for_name):
+#     my_private_channel_id = None
+#     my_private_channel = None
+
+#     async for dialog in client.iter_dialogs():
+#         if dialog.name == search_for_name:
+#             my_private_channel = dialog
+#             my_private_channel_id = dialog.id
+#             break
+    
+#     print(my_private_channel)
+#     print(my_private_channel_id)
+#     if search_for_name is None:
+#         return "chat not found"
+#     else:
+#         return my_private_channel_id
+
+# conversation_name = await chat_iter(client, username)

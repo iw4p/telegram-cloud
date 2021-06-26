@@ -33,19 +33,22 @@ def download_callback(current, total):
 def upload_callback(current, total):
     print('Uploaded', current, 'out of', total, 'bytes: {:.2%}'.format(current / total))
 
+
 async def main():
 
     # Get target username 
     username = args.username
 
     target_chat = await target_username_handler(client, username)
+
     # Retrieve and download a file from its name or caption, from specific target_chat
     if args.mode == 'download':
         if args.caption and args.path and username:
-            async for message in client.iter_messages(entity=username, search=args.caption):
+            async for message in client.iter_messages(entity=target_chat, search=args.caption):
                 try:
                     await client.download_media(message, args.path, progress_callback=download_callback)
                 except:
+                    print('ridam')
                     pass
 
 

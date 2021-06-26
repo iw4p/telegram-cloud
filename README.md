@@ -4,7 +4,7 @@
 
 
 ## telegram-cloud
-### Download and upload files via telegram, Use your telegram account as free cloud storage.
+### Searching in groups, private channel and chats, Download and upload files via telegram and Using your telegram account as free cloud storage.
 
 [![PyPI version](https://img.shields.io/pypi/v/telegram-cloud.svg)](https://pypi.org/project/telegram-cloud)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/telegram-cloud.svg)](#Installation)
@@ -13,7 +13,7 @@
  [![Build demos workflow](https://github.com/iw4p/telegram-cloud/workflows/Upload%20Python%20Package/badge.svg?branch=master)](https://github.com/iw4p/telegram-cloud/actions?query=workflow%3A"Build+demos") 
 [![Documentation Status](https://readthedocs.org/projects/telegram-cloud/badge/?version=latest)](https://telegram-cloud.readthedocs.io/en/latest/?badge=latest)
 
-Uploader, Downloader, Crawler, Bot 50MB limitation bypasser.
+Uploader, Downloader, Crawler, Bot 50MB limitation bypasser. (Maybe can wash the dishes someday)
 
   - Upload file upto 2 GB
   - Download file from every conversation, group, channel, ...
@@ -26,7 +26,7 @@ You can also:
 
 ### Hmm what is this?
 
-It's a python library for [Telegram messenger](https://telegram.org/), which can give you an ability to download, upload, and more options to do with your Telegram account on CLI.
+It's a python package for [Telegram messenger](https://telegram.org/), which can give you an ability to download, upload, and more options to do with your Telegram account on CLI.
 
 ### Installation
 
@@ -178,8 +178,9 @@ Inside `telegram-cloud-config.ini`, you can find api_hash and api_id and name yo
 - [x] Send a message via cli (`tgsend`)
 - [x] Delete a message via cli (`tgutil`)
 - [x] Edit a message via cli (`tgutil`)
+- [ ] Increasing the speed of Download and Upload
 - [ ] Clean and compelete document (please help, please)
-- [ ] Code is super clean, need to be clean and have a good structure
+- [ ] Code is super dirty, need to be cleaned and have a good structure
 - [ ] Upload and download multiple files
 - [ ] Upload and download a directory
 - [x] Add progress bar while downloading/uploading 
@@ -193,9 +194,10 @@ Please refer to each project's style and contribution guidelines for submitting 
 
  1. **Fork** the repo on GitHub
  2. **Clone** the project to your own machine
- 3. **Commit** changes to your own branch
- 4. **Push** your work back up to your fork
- 5. Submit a **Pull request** so that we can review your changes
+ 3. **Update the Version** in [Setup.py](https://github.com/iw4p/telegram-cloud/blob/master/setup.py)
+ 4. **Commit** changes to your own branch
+ 5. **Push** your work back up to your fork
+ 6. Submit a **Pull request** so that we can review your changes
 
 NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 
@@ -209,6 +211,10 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 Special thanks to Contributors
 
 [@anightshade](https://github.com/anightshade): For adding `tgsend` and fixing bugs!
+[@anightshade](https://github.com/anightshade): For adding Command line option to select format for the file caption.
+[@rany2](https://github.com/rany2): For fixing uploading path and files
+[@anightshade](https://github.com/anightshade): For adding option to disable weblink preview in message 
+
 
 ### LICENSE
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

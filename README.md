@@ -42,7 +42,7 @@ Also can be found on [pypi](https://pypi.org/project/telegram-cloud/)
   - Now you need to get api_id and api_hash from here [Telegram](https://my.telegram.org/)
   from [Telethon document](https://docs.telethon.dev/en/latest/basic/signing-in.html):
     >Before working with Telegram’s API, you need to get your own API ID and hash:
-    [Login to your Telegram](https://docs.telethon.dev/en/latest/basic/signing-in.html) account with the phone number of the developer account to use.
+    [Login to your Telegram](https://core.telegram.org/api/obtaining_api_id) account with the phone number of the developer account to use.
     Click under API Development tools.
     A Create new application window will appear. Fill in your application details. There is no need to enter any URL, and only the first two fields (App title and Short name) can currently be changed later.
     Click on Create application at the end. Remember that your API hash is secret and Telegram won’t let you revoke it. Don’t post it anywhere!

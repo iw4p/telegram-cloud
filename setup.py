@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="telegram-cloud",
-    version="1.4.41",
+    version="1.4.42",
     description="Download and upload files via telegram up to 2 GB, CLI",
     long_description=README,
     long_description_content_type="text/markdown",

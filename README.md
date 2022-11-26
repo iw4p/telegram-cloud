@@ -186,6 +186,11 @@ Inside `telegram-cloud-config.ini`, you can find api_hash and api_id and name yo
 - [x] Add progress bar while downloading/uploading 
 - [x] Add progress bar while downloading/uploading 
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=iw4p/telegram-cloud&type=Date)](https://star-history.com/#iw4p/telegram-cloud&Date)
+
+
 ### Issues
 Feel free to submit issues and enhancement requests.
 

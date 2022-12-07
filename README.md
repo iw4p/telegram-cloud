@@ -192,7 +192,7 @@ Inside `telegram-cloud-config.ini`, you can find api_hash and api_id and name yo
 
 
 ### Issues
-Feel free to submit issues and enhancement requests.
+Feel free to submit issues and enhancement requests or contact me via [vida.page/nima](https://vida.page/nima).
 
 ### Contributing
 Please refer to each project's style and contribution guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
